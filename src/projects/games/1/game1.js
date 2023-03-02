@@ -1,8 +1,12 @@
 import {TrialCircles} from "./TrialCircles";
 import {FeedbackCircles} from "./FeedbackCircles";
 import {useEffect, useState} from "react";
+import {Link, NavLink, useNavigate} from "react-router-dom";
+import {PermamentFeatures} from "../../../site/PermamentFeatures";
 
 export const Game1 = () => {
+
+    const navigate = useNavigate();
 
     const blankGuesses = new Array(12);
     for(let i = 0; i < blankGuesses.length; i++){
@@ -98,7 +102,7 @@ export const Game1 = () => {
     }, [focused, turn, guesses, feedback, secret]);
 
     return (
-        <div className="gameArea">
+        <PermamentFeatures setId="gameArea">
             <div className="trials">
             {guesses.map((circles, index) => {
                 return (
@@ -113,6 +117,6 @@ export const Game1 = () => {
                     )
                 })}
             </div>
-        </div>
+        </PermamentFeatures>
     )
 }

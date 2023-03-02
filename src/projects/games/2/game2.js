@@ -2,6 +2,8 @@ import {useState} from "react";
 import {cardNames, cardPairs} from "./cards";
 import {MemorialCard} from "./MemorialCard";
 import {PhotoCredits} from "./PhotoCredits";
+import {NavLink} from "react-router-dom";
+import {PermamentFeatures} from "../../../site/PermamentFeatures";
 
 
 export const Game2 = () => {
@@ -73,18 +75,18 @@ export const Game2 = () => {
 
     const restart = () => {};
     return (
-        <div className='playGround'>
-            {solved !== amount ? (
-                cardMix.map((card, index) => (
-                    <MemorialCard card={card} index={index} key={index} choose={choose} />
-                ))
-            ) : (
-                <div>
-                    <h1>Game finished in {turns} turns</h1>
-                    <button onClick={restart}>Restart</button>
-                </div>
-            )}
-            <PhotoCredits/>
-        </div>
+        <PermamentFeatures setId="playGround">
+                {solved !== amount ? (
+                    cardMix.map((card, index) => (
+                        <MemorialCard card={card} index={index} key={index} choose={choose} />
+                    ))
+                ) : (
+                    <div>
+                        <h1>Game finished in {turns} turns</h1>
+                        <button onClick={restart}>Restart</button>
+                    </div>
+                )}
+                <PhotoCredits/>
+            </PermamentFeatures>
     );
 }

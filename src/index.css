@@ -1,29 +1,33 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+}
+
+body {
+
+  font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  text-decoration: none;
+  color: inherit;
 }
-
-
-
 
 #main-container {
   background-color: #83aed9;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 .main-area {
   padding: 50px 0 100px 60px;
 }
 
-.playGround {
+#playGround {
   display: grid;
   grid-template-columns: repeat(8, 110px);
   margin: 50px;
@@ -98,7 +102,7 @@ td img {
           drop-shadow(-1px 1px 0px #aaa)
 }
 
-.gameArea {
+#gameArea {
   display: grid;
   grid-template-columns: 180px 50px;
   background-color: #555;
@@ -124,4 +128,18 @@ td img {
   filter:
           drop-shadow(1px 1px 1px #000)
 
+}
+
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#sitebase {
+  display: grid;
+  grid-template-columns: 250px auto;
+}
+
+#sidebar {
+  padding: 10px;
 }
