@@ -1,9 +1,10 @@
 import {useState} from "react";
 import {cardNames, cardPairs} from "./cards";
 import {MemorialCard} from "./MemorialCard";
-import {PhotoCredits} from "./PhotoCredits";
-import {NavLink} from "react-router-dom";
-import {PermamentFeatures} from "../../../site/PermamentFeatures";
+import {PermamentFeatures} from "../../site/PermamentFeatures";
+import styled from "styled-components";
+import "./game2.css";
+import {photographers} from "./photographers";
 
 
 export const Game2 = () => {
@@ -69,24 +70,63 @@ export const Game2 = () => {
 
     const flip = index => {
         const newCardMix = [...cardMix];
-        newCardMix[index].reveal = newCardMix[index].reveal ? false : true;
+        newCardMix[index].reveal = !newCardMix[index].reveal;
         setCardMix(newCardMix);
     };
 
+    const sideContent = () => {
+        return (
+            <div>
+                <h2>Photo credits <br/>on Unsplash</h2>
+                <ul>
+                {photographers.map(photographer => (
+                        <li>
+                            <a className="tooltip" href={photographer[1]} target="_blank" rel="noreferrer">
+                                {photographer[0]}<span className="tooltiptext">
+                                {photographer[2].map(photo => (
+                                    <img className="thumbnail"
+                                         src={`/img/${photo}.png`}
+                                         alt='food' />
+                                ))}
+                            </span>
+                            </a>
+                        </li>
+                    )
+                )}
+                </ul>
+            </div>
+        )
+    }
+
+    const ContentArea = styled.div`
+      background-color: #d6d6de;
+    `;
+
+    const Game = styled.div`
+      display: grid;
+      grid-template-columns: repeat(8, 100px);
+      margin: 50px;
+    `;
+
+
+
     const restart = () => {};
     return (
-        <PermamentFeatures setId="playGround">
-                {solved !== amount ? (
-                    cardMix.map((card, index) => (
-                        <MemorialCard card={card} index={index} key={index} choose={choose} />
-                    ))
-                ) : (
-                    <div>
-                        <h1>Game finished in {turns} turns</h1>
-                        <button onClick={restart}>Restart</button>
-                    </div>
-                )}
-                <PhotoCredits/>
+        <PermamentFeatures overview={false} sideContent={sideContent()}>
+            <ContentArea>
+                <Game>
+                    {solved !== amount ? (
+                        cardMix.map((card, index) => (
+                            <MemorialCard card={card} index={index} key={index} choose={choose} />
+                        ))
+                    ) : (
+                        <div>
+                            <h1>Game finished in {turns} turns</h1>
+                            <button onClick={restart}>Restart</button>
+                        </div>
+                    )}
+                </Game>
+            </ContentArea>
             </PermamentFeatures>
     );
 }

@@ -1,0 +1,51 @@
+#glass1 {
+    grid-area: 12 / 4 / 15 / 8;
+}
+
+#glass2 {
+    grid-area: 11 / 10 / 15 / 16;
+}
+
+#glass3 {
+    grid-area: 7 / 2 / 10 / 9;
+}
+
+#glass4 {
+    grid-area: 6 / 10 / 9 / 16;
+}
+
+#glass5 {
+    grid-area: 1 / 3 / 6 / 12;
+
+}
+
+#glass6 {
+    grid-area: 1 / 7 / 16 / 15;
+}
+
+#glass7 {
+    grid-area: 2 / 2 / 4 / 4;
+    color: #c26592;
+    font-size: 20px;
+}
+
+#glass8 {
+    grid-area: 6 / 2 / 9 / 7;
+    color: #7a83ce;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+#glass9 {
+    grid-area: 10 / 10 / 12 / 16;
+    color: #aecedb;
+    font-size: 44px;
+    font-weight: 700;
+}
+
+#glass10 {
+    grid-area: 11 / 7 / 13 / 11;
+    color: #bac6a2;
+    font-size: 54px;
+    font-weight: 700;
+}

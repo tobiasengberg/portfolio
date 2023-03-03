@@ -6,9 +6,10 @@ import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
-import {Game1} from "./projects/games/1/game1";
-import {Game2} from "./projects/games/2/game2";
+import {Game1} from "./projects/1/game1";
+import {Game2} from "./projects/2/game2";
 import "./index.css";
+import {Design1} from "./projects/3/design1";
 
 const router = createBrowserRouter([
     {
@@ -17,12 +18,16 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
     },
     {
-        path: "/game/1",
+        path: "/project-1",
         element: <Game1 />,
     },
     {
-        path: "/game/2",
+        path: "/project-2",
         element: <Game2 />,
+    },
+    {
+        path: "/project-3",
+        element: <Design1 />,
     },
 ]);
 

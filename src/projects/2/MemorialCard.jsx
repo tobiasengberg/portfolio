@@ -1,6 +1,9 @@
+
 export const MemorialCard = ({ card, index, choose }) => {
-  const classification = `${card.play ? 'play' : 'noPlay'} memoryCard`;
-  return (
+  const classification = `${card.play ? 'play' : 'no-play'} memory-card`;
+
+
+    return (
     <div className={classification}>
       <img
         className={card.reveal ? 'chosen' : ''}

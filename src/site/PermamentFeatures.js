@@ -1,16 +1,22 @@
 import {NavLink} from "react-router-dom";
 
-export const PermamentFeatures = ({children, setId}) => {
+export const PermamentFeatures = ({children, setId, overview, sideContent}) => {
     return (
         <div id="sitebase">
             <div id="sidebar">
-                <h1>Things Made</h1>
-                <p className="uppercase">By Tobias Engberg</p>
-                <NavLink to={-1}>Return</NavLink>
+                <div>
+                    <h1>Things Made</h1>
+                    <p className="uppercase">By Tobias Engberg</p>
+                </div>
+                <div>
+                    {overview ? undefined : <NavLink to={"/"} className="link right">&larr; Back to overview</NavLink>}
+                </div>
+                <div>
+                    {sideContent}
+                </div>
             </div>
-            <div id={setId}>
-                {children}
-            </div>
+            {children}
+
         </div>
     )
 }

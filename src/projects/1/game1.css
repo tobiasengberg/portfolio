@@ -1,0 +1,41 @@
+.feedback {
+    background-color: #555;
+    display: flex;
+    flex-direction: column;
+    width: 24px;
+    margin-left: 24px;
+    justify-content: flex-start;
+}
+.activeCircle {
+    filter:
+            drop-shadow(-1px -1px 0px #aaa)
+            drop-shadow(1px -1px 0px #aaa)
+            drop-shadow(1px 1px 0px #aaa)
+            drop-shadow(-1px 1px 0px #aaa)
+}
+.blackBg {
+    background-color: #555;
+    display: flex;
+    width: 180px;
+    justify-content: space-between;
+    padding-bottom: 12px;
+}
+.blackBg img {
+    object-fit: contain;
+    width: 30px;
+}
+.blackBgRight img {
+    width: 12px;
+    object-fit: contain;
+    margin-bottom: 3px;
+}
+.blackBgRight {
+
+    display: grid;
+    grid-template-columns: 15px 15px;
+    padding-bottom: 12px;
+}
+.blackBgRight > *.filled {
+    filter:
+            drop-shadow(1px 1px 1px #000)
+}

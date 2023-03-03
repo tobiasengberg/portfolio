@@ -1,36 +1,36 @@
 export const photographers = [
 
-    ["Mae Mu at Unsplash",
+    ["Mae Mu",
         "https://unsplash.com/@picoftasty", ["p9y", "j7s", "q2f", "u7n", "o7b"]],
 
-    ["Annie Spratt at Unsplash",
+    ["Annie Spratt",
         "https://unsplash.com/@anniespratt", ["s9a"]],
 
-    ["Karsten Winegeart at Unsplash",
+    ["Karsten Winegeart",
         "https://unsplash.com/@karsten116", ["o5q"]],
 
-    ["Acton Crawford at Unsplash",
+    ["Acton Crawford",
         "https://unsplash.com/@acton_crawford", ["s1t"]],
 
-    ["Edward Howell at Unsplash",
+    ["Edward Howell",
         "https://unsplash.com/@edwardhowellphotography", ["n2d"]],
 
-    ["Marina Zaharkina at Unsplash",
+    ["Marina Zaharkina",
         "https://unsplash.com/@minton", ["p6e"]],
 
-    ["Tata Zaremba at Unsplash",
+    ["Tata Zaremba",
         "https://unsplash.com/@linda_zaremba", ["a2k", "a4f"]],
 
-    ["Louis Hansel at Unsplash",
+    ["Louis Hansel",
         "https://unsplash.com/@louishansel", ["k3c", "s5j"]],
 
-    ["Tamas Pap at Unsplash",
+    ["Tamas Pap",
         "https://unsplash.com/@tamasp", ["o8r", "u9a"]],
 
-    ["FLY:D at Unsplash",
+    ["FLY:D",
         "https://unsplash.com/@flyd2069", ["j8r"]],
 
-    ["Ekaterina Grosheva at Unsplash",
+    ["Ekaterina Grosheva",
         "https://unsplash.com/@kitkat93", ["h5f", "i9r", "q9h"]]
 
 
