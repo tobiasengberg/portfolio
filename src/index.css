@@ -15,7 +15,7 @@ body {
 a {
   text-decoration: none;
   color: inherit;
-  text-underline-position: below;
+  text-underline-position: under;
 }
 
 li {
@@ -43,8 +43,16 @@ td img {
 }
 
 
-
 .uppercase {
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.link {
+  text-decoration: underline;
+  color: blue;
+}
+
+.padding {
+  padding: 1em 0;
 }

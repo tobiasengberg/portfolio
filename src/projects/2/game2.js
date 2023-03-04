@@ -6,6 +6,18 @@ import styled from "styled-components";
 import "./game2.css";
 import {photographers} from "./photographers";
 
+const ContentArea = styled.div`
+      background-color: #d6d6de;
+    `;
+
+const Game = styled.div`
+      display: grid;
+      grid-template-columns: repeat(8, 100px);
+      margin: 50px;
+      .game-response {
+        grid-column: 2 / 7;
+      }
+    `;
 
 export const Game2 = () => {
     const [amount, setAmount] = useState(20);
@@ -77,7 +89,8 @@ export const Game2 = () => {
     const sideContent = () => {
         return (
             <div>
-                <h2>Photo credits <br/>on Unsplash</h2>
+                <h2>Game</h2>
+                <h3>Photo credits on Unsplash</h3>
                 <ul>
                 {photographers.map(photographer => (
                         <li>
@@ -98,18 +111,6 @@ export const Game2 = () => {
         )
     }
 
-    const ContentArea = styled.div`
-      background-color: #d6d6de;
-    `;
-
-    const Game = styled.div`
-      display: grid;
-      grid-template-columns: repeat(8, 100px);
-      margin: 50px;
-    `;
-
-
-
     const restart = () => {};
     return (
         <PermamentFeatures overview={false} sideContent={sideContent()}>
@@ -120,7 +121,7 @@ export const Game2 = () => {
                             <MemorialCard card={card} index={index} key={index} choose={choose} />
                         ))
                     ) : (
-                        <div>
+                        <div className="game-response">
                             <h1>Game finished in {turns} turns</h1>
                             <button onClick={restart}>Restart</button>
                         </div>

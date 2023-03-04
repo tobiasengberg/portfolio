@@ -2,6 +2,20 @@ import styled from "styled-components";
 import {PermamentFeatures} from "../../site/PermamentFeatures";
 import "./design1.css"
 
+const ContentArea = styled.div`
+      background-color: #f1f2f4;
+    `;
+
+const Design = styled.div`
+      display: grid;
+      grid-template-columns: repeat(16, 70px);
+      grid-template-rows: repeat(16, 50px);  
+      img {
+        width: 100%;
+        
+      }
+    `;
+
 export const Design1 = () => {
 
     const sideContent = () => {
@@ -12,20 +26,6 @@ export const Design1 = () => {
             </div>
         )
     }
-
-    const ContentArea = styled.div`
-      background-color: #f1f2f4;
-    `;
-
-    const Design = styled.div`
-      display: grid;
-      grid-template-columns: repeat(16, 70px);
-      grid-template-rows: repeat(16, 50px);  
-      img {
-        width: 100%;
-        
-      }
-    `;
 
     return (
         <PermamentFeatures overview={false} sideContent={sideContent()}>

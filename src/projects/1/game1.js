@@ -6,9 +6,35 @@ import {PermamentFeatures} from "../../site/PermamentFeatures";
 import styled from "styled-components";
 import "./game1.css"
 
-export const Game1 = () => {
+const ContentArea = styled.div`
+      background-color: #555;
+      padding: 50px 0 0 200px;
+      display: grid;
+      grid-template-columns: 300px 400px;
+      gap: 30px;
+    `;
 
-    const navigate = useNavigate();
+const Game = styled.div`
+      display: grid;
+      grid-template-columns: 180px 50px;
+      background-color: #555;
+      width: 300px;
+      height: 500px;
+      padding: 20px;
+    `
+
+const Info = styled.div`
+      padding: 20px;
+      color: #777;
+      h3 {
+        font-size: 30px;
+        span {
+          color: #aaa;
+        }
+      }
+    `
+
+export const Game1 = () => {
 
     const blankGuesses = new Array(12);
     for(let i = 0; i < blankGuesses.length; i++){
@@ -106,40 +132,16 @@ export const Game1 = () => {
     const sideContent = () => {
         return (
             <div>
-                <h2>Stuff with mastermind</h2>
-                <p>Black feedback indicates the correct trial color in the right position</p>
-                <p>White feedback could be turned into black if a trial color were placed in another position</p>
+                <h2>Game</h2>
+                <p>Translated to React from an initial coding in pure JavaScript.</p>
+                <div className="padding" >
+                    <a className="link" href="https://github.com/Exilic/master-mind/blob/master/game.js" target="_blank" rel="noreferrer">game.js</a>
+                </div>
+                <p> Getting the correct feedback in terms of white dots proved trickiest. A white dot represents a potential black dot, which would be a correct answer altogether. Among guesses not valid for a white dot comes the second violet guess, complementing the single violet in the secret selection correctly guessed with the first guess. The second violet is indeed a correct color in a wrong position, but would not bring another black dot if moved into the right position (this position already occupied by the correct guess.)</p>
+
             </div>
         )
     }
-
-    const ContentArea = styled.div`
-      background-color: #555;
-      padding: 50px 0 0 200px;
-      display: grid;
-      grid-template-columns: 300px 400px;
-      gap: 30px;
-    `;
-
-    const Game = styled.div`
-      display: grid;
-      grid-template-columns: 180px 50px;
-      background-color: #555;
-      width: 300px;
-      height: 500px;
-      padding: 20px;
-    `
-
-    const Info = styled.div`
-      padding: 20px;
-      color: #777;
-      h3 {
-        font-size: 30px;
-        span {
-          color: #aaa;
-        }
-      }
-    `
 
     return (
         <PermamentFeatures setId="gameArea2" overview={false} sideContent={sideContent()}>

@@ -1,0 +1,35 @@
+.news-logo {
+    padding-bottom: 50px;
+}
+
+.article-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px dotted #888;
+}
+
+.article-title {
+    font-size: 15px;
+    padding-top: 2px;
+}
+
+.article-date {
+    font-size: 13px;
+}
+
+.article-author {
+    font-size: 13px;
+    padding-top: 16px;
+}
+
+.article-description {
+    font-size: 13px;
+}
+
+.article-source {
+    font-size: 13px;
+    color: blue;
+    text-align: right;
+    padding: 16px 0;
+}

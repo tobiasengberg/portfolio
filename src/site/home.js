@@ -18,17 +18,19 @@ export default function Home() {
     const sideContent = () => {
         return (
             <div>
-                <h2>Stuff with overview</h2>
+                <h2>Portfolio</h2>
+                <div className="padding" >
+                    <a className="link" href="https://github.com/Exilic/portfolio" target="_blank" rel="noreferrer">GitHub repository</a>
+                </div>
             </div>
         )
     }
+
     return (
             <PermamentFeatures setId="main-container" overview={true} sideContent={sideContent()}>
                 <ContentList>
                     {content.map((links, index) => (<Card index={index} links={links} />))}
                 </ContentList>
             </PermamentFeatures>
-
-
     );
 }

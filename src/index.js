@@ -10,6 +10,7 @@ import {Game1} from "./projects/1/game1";
 import {Game2} from "./projects/2/game2";
 import "./index.css";
 import {Design1} from "./projects/3/design1";
+import {Api1} from "./projects/4/api1";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
     {
         path: "/project-3",
         element: <Design1 />,
+    },
+    {
+        path: "/project-4",
+        element: <Api1 />,
     },
 ]);
 
