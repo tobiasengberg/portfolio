@@ -47,29 +47,29 @@ export const Api1 = () => {
     const date = 'from=' + year + '-' + month + '-' + day + '&';
 
 
-    // useEffect(() => {
-    //         if(calledOnce.current) {
-    //             return;
-    //         }
-    //     const url = 'https://newsapi.org/v2/everything?' +
-    //         'q="Jane Jacobs"&' +
-    //         date +
-    //         'sortBy=popularity&' +
-    //         apiKey;
-    //
-    //     const req = new Request(url);
-    //
-    //     fetch(req)
-    //         .then(function(response) {
-    //
-    //             return response.json();
-    //         })
-    //         .then(function(result){
-    //             console.log(result);
-    //             setArticles(result.articles);
-    //         })
-    //         calledOnce.current = true;
-    // }, [apiKey, date]);
+    useEffect(() => {
+            if(calledOnce.current) {
+                return;
+            }
+        const url = 'https://newsapi.org/v2/everything?' +
+            'q="Jane Jacobs"&' +
+            date +
+            'sortBy=popularity&' +
+            apiKey;
+
+        const req = new Request(url);
+
+        fetch(req)
+            .then(function(response) {
+
+                return response.json();
+            })
+            .then(function(result){
+                console.log(result);
+                setArticles(result.articles);
+            })
+            calledOnce.current = true;
+    }, [apiKey, date]);
 
     const sideContent = () => {
         return (

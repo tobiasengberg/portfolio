@@ -21,8 +21,13 @@ export const Design1 = () => {
     const sideContent = () => {
         return (
             <div>
-                <h2>Drawings in ProCreate</h2>
-
+                <h2>Drawings</h2>
+                <p>A case of design by drawing, carried out on an iPad in the app Procreate. Drawings assembled and given a mirror effect in Adobe PhotoShop.</p>
+                <div className="padding" >
+                    <a className="link" href="https://procreate.com" target="_blank" rel="noreferrer">Procreate</a>
+                </div>
+                <p className="padding">The capability of recognizing something as something else works on a level of effects. A drawing effect can thus evoke an experience of artefact. The overall sense though, is one of possible revelation.</p>
+                <p>The design intentionality stems from drawing strategies that have become habitual.</p>
             </div>
         )
     }
@@ -37,10 +42,10 @@ export const Design1 = () => {
                     <img id="glass3" src="/img/glass-3.png" alt=""/>
                     <img id="glass4" src="/img/glass-4.png" alt=""/>
                     <img id="glass5" src="/img/glass-5.png" alt=""/>
-                    <p id="glass7">Some text<br/>thoughts</p>
-                    <p id="glass8">More text impressions</p>
-                    <p id="glass9">More text impressions</p>
-                    <p id="glass10">Simple</p>
+                    <p id="glass7">Increased color<br/> saturation<br/>invoking<br/>an inside</p>
+                    <p id="glass8">Light colors invoking glimmering</p>
+                    <p id="glass9">Transparency as a color phenomena</p>
+                    <p id="glass10">Single stroke of light color<br/>  invoking a cut surface</p>
                 </Design>
             </ContentArea>
         </PermamentFeatures>

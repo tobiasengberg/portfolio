@@ -13,6 +13,8 @@ export default function Home() {
       gap: 30px;
       background-color: #83aed9;
       padding: 20px;
+      position: relative;
+      mix-blend-mode: multiply;
     `;
 
     const sideContent = () => {
