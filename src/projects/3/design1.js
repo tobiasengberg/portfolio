@@ -36,12 +36,12 @@ export const Design1 = () => {
         <PermamentFeatures overview={false} sideContent={sideContent()}>
             <ContentArea>
                 <Design>
-                    <img id="glass6" src="/img/lines.svg" alt="contour lines"/>
-                    <img id="glass1" src="/img/glass-1.png" alt=""/>
-                    <img id="glass2" src="/img/glass-2.png" alt=""/>
-                    <img id="glass3" src="/img/glass-3.png" alt=""/>
-                    <img id="glass4" src="/img/glass-4.png" alt=""/>
-                    <img id="glass5" src="/img/glass-5.png" alt=""/>
+                    <img id="glass6" src="/portfolio/img/lines.svg" alt="contour lines"/>
+                    <img id="glass1" src="/portfolio/img/glass-1.png" alt=""/>
+                    <img id="glass2" src="/portfolio/img/glass-2.png" alt=""/>
+                    <img id="glass3" src="/portfolio/img/glass-3.png" alt=""/>
+                    <img id="glass4" src="/portfolio/img/glass-4.png" alt=""/>
+                    <img id="glass5" src="/portfolio/img/glass-5.png" alt=""/>
                     <p id="glass7">Increased color<br/> saturation<br/>invoking<br/>an inside</p>
                     <p id="glass8">Light colors invoking glimmering</p>
                     <p id="glass9">Transparency as a color phenomena</p>

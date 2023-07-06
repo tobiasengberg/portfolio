@@ -3,7 +3,7 @@ import Home from "./site/home";
 import ErrorPage from "./error-page";
 import ReactDOM from "react-dom/client";
 import {
-    createHashRouter,
+    createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
 import {Game1} from "./projects/1/game1";
@@ -12,26 +12,26 @@ import "./index.css";
 import {Design1} from "./projects/3/design1";
 import {Api1} from "./projects/4/api1";
 
-const router = createHashRouter([
+const router = createBrowserRouter([
     {
-        path: "#/",
+        path: "/portfolio/",
         element: <Home />,
         errorElement: <ErrorPage />,
     },
     {
-        path: "#/project-1",
+        path: "/portfolio/project-1",
         element: <Game1 />,
     },
     {
-        path: "#/project-2",
+        path: "/portfolio/project-2",
         element: <Game2 />,
     },
     {
-        path: "#/project-3",
+        path: "/portfolio/project-3",
         element: <Design1 />,
     },
     {
-        path: "#/project-4",
+        path: "/portfolio/project-4",
         element: <Api1 />,
     },
 ]);
