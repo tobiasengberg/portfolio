@@ -24,7 +24,7 @@ export const PhotoCredits = () => {
                         <td className="thumbs-row">
                             {photographer[2].map(photo => (
                                 <img className="thumbnail"
-                                     src={`/portfolio/#img/${photo}.png`}
+                                     src={`/img/${photo}.png`}
                                      alt='food' />
                             ))}
                         </td>

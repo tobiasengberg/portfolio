@@ -14,24 +14,24 @@ import {Api1} from "./projects/4/api1";
 
 const router = createHashRouter([
     {
-        path: "/portfolio/#",
+        path: "/",
         element: <Home />,
         errorElement: <ErrorPage />,
     },
     {
-        path: "/portfolio/#project-1",
+        path: "/project-1",
         element: <Game1 />,
     },
     {
-        path: "/portfolio/#project-2",
+        path: "/project-2",
         element: <Game2 />,
     },
     {
-        path: "/portfolio/#project-3",
+        path: "/project-3",
         element: <Design1 />,
     },
     {
-        path: "/portfolio/#project-4",
+        path: "/project-4",
         element: <Api1 />,
     },
 ]);
