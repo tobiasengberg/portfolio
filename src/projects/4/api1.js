@@ -81,7 +81,7 @@ export const Api1 = () => {
                 </div>
                 <p>The choice of searching for "Jane Jacobs" came from a curiosity on the subject and an estimation of a manageable amount of positives.</p>
                 <div className="padding" >
-                    <a className="link" href="https://github.com/Exilic/portfolio/tree/master/src/projects/3" target="_blank" rel="noreferrer">GitHub folder</a>
+                    <a className="link" href="https://github.com/Exilic/portfolio/#tree/master/src/projects/3" target="_blank" rel="noreferrer">GitHub folder</a>
                 </div>
             </div>
         )

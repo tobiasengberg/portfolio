@@ -19,17 +19,17 @@ export const TrialCircles = (props) => {
         <div className="blackBg">
             {props.turn ?
                 ( <>
-                <img className={props.focused === 0 ? "activeCircle" : ""} src={`#/portfolio//img/${coloring[props.toShow[0]]}.svg`} onClick={handleTry} alt="colored button"/>
-                <img className={props.focused === 1 ? "activeCircle" : ""} src={`#/portfolio/img/${coloring[props.toShow[1]]}.svg`} onClick={handleTry} alt="colored button"/>
-                <img className={props.focused === 2 ? "activeCircle" : ""} src={`#/portfolio/img/${coloring[props.toShow[2]]}.svg`} onClick={handleTry} alt="colored button"/>
-                <img className={props.focused === 3 ? "activeCircle" : ""} src={`#/portfolio/img/${coloring[props.toShow[3]]}.svg`} onClick={handleTry} alt="colored button"/>
+                <img className={props.focused === 0 ? "activeCircle" : ""} src={`/portfolio/#/img/${coloring[props.toShow[0]]}.svg`} onClick={handleTry} alt="colored button"/>
+                <img className={props.focused === 1 ? "activeCircle" : ""} src={`/portfolio/#img/${coloring[props.toShow[1]]}.svg`} onClick={handleTry} alt="colored button"/>
+                <img className={props.focused === 2 ? "activeCircle" : ""} src={`/portfolio/#img/${coloring[props.toShow[2]]}.svg`} onClick={handleTry} alt="colored button"/>
+                <img className={props.focused === 3 ? "activeCircle" : ""} src={`/portfolio/#img/${coloring[props.toShow[3]]}.svg`} onClick={handleTry} alt="colored button"/>
                 </>)
                 :
                 (<>
-                <img src={`#/portfolio/img/${coloring[props.toShow[0]]}.svg`} alt="colored button"/>
-                <img src={`#/portfolio/img/${coloring[props.toShow[1]]}.svg`} alt="colored button"/>
-                <img src={`#/portfolio/img/${coloring[props.toShow[2]]}.svg`} alt="colored button"/>
-                <img src={`#/portfolio/img/${coloring[props.toShow[3]]}.svg`} alt="colored button"/>
+                <img src={`/portfolio/#img/${coloring[props.toShow[0]]}.svg`} alt="colored button"/>
+                <img src={`/portfolio/#img/${coloring[props.toShow[1]]}.svg`} alt="colored button"/>
+                <img src={`/portfolio/#img/${coloring[props.toShow[2]]}.svg`} alt="colored button"/>
+                <img src={`/portfolio/#img/${coloring[props.toShow[3]]}.svg`} alt="colored button"/>
                 </>)
             }
         </div>

@@ -6,7 +6,7 @@ export const Article = ({content}) => {
                 {content.urlToImage != null ?
                     <img src={content.urlToImage} alt="related to article"/>
                     :
-                    <img src="#/portfolio/img/replacement.png" alt="missing link"/>
+                    <img src="/portfolio/#img/replacement.png" alt="missing link"/>
                 }
 
                 <h3 className="article-title">{content.title}</h3>
