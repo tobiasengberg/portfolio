@@ -3,7 +3,7 @@ import Home from "./site/home";
 import ErrorPage from "./error-page";
 import ReactDOM from "react-dom/client";
 import {
-    createBrowserRouter,
+    createHashRouter,
     RouterProvider,
 } from "react-router-dom";
 import {Game1} from "./projects/1/game1";
@@ -12,7 +12,7 @@ import "./index.css";
 import {Design1} from "./projects/3/design1";
 import {Api1} from "./projects/4/api1";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: "/portfolio/",
         element: <Home />,
