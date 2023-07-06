@@ -34,7 +34,9 @@ const router = createHashRouter([
         path: "/project-4",
         element: <Api1 />,
     },
-]);
+],{
+    basename: "/portfolio",
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
