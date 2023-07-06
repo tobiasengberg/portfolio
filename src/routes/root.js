@@ -29,10 +29,10 @@ export default function Root() {
                 <nav>
                     <ul>
                         <li>
-                            <a href={`/game/1`}>Game 1</a>
+                            <a href={`#/game/1`}>Game 1</a>
                         </li>
                         <li>
-                            <a href={`/game/2`}>Game 2</a>
+                            <a href={`#/game/2`}>Game 2</a>
                         </li>
                     </ul>
                 </nav>
