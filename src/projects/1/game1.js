@@ -1,6 +1,6 @@
 import {TrialCircles} from "./TrialCircles";
 import {FeedbackCircles} from "./FeedbackCircles";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {PermamentFeatures} from "../../site/PermamentFeatures";
 import styled from "styled-components";
@@ -36,92 +36,117 @@ const Info = styled.div`
 
 export const Game1 = () => {
 
-    const blankGuesses = new Array(12);
+    const maxGuesses = 12;
+
+    const blankGuesses = new Array(maxGuesses);
     for(let i = 0; i < blankGuesses.length; i++){
         blankGuesses[i] = new Array(4).fill(0);
     }
 
-    const blankFeedback = new Array(12);
+    const blankFeedback = new Array(maxGuesses);
     for(let i = 0; i < blankFeedback.length; i++){
         blankFeedback[i] = new Array(4).fill("blank");
     }
 
+    let gameWon = useRef("")
     const [secret, setSecret] = useState([]);
     const [guesses, setGuesses] = useState(blankGuesses);
     const [feedback, setFeedback] = useState(blankFeedback);
     const [focused, setFocused] = useState(0);
     const [turn, setTurn] = useState(0);
+    const [newGame, setNewGame] = useState(true);
 
     useEffect(() => {
-        const temp = new Array(4);
-        for(let i = 0; i < 4; i++){
-            temp[i] = Math.floor(Math.random() * (6 - 1) + 1);
+        if (newGame) {
+            const temp = new Array(4);
+            for(let i = 0; i < 4; i++){
+                temp[i] = Math.floor(Math.random() * (6 - 1) + 1);
+            }
+            setSecret(temp);
+            setNewGame(false);
         }
-        setSecret(temp);
-    }, [])
+
+    }, [newGame])
 
     useEffect(() => {
         const handleKey = (e) => {
             e.preventDefault();
-            if(e.key === "ArrowRight") {
-                focused < 3 && setFocused(() => focused + 1);
+            if (e.key === 'n') {
+                setTurn(0);
+                setFocused(0);
+                setGuesses(blankGuesses);
+                setFeedback(blankFeedback);
+                gameWon.current = "";
+                setNewGame(true);
             }
-            if(e.key === "ArrowLeft") {
-                focused > 0 && setFocused(() => focused - 1);
-            }
-            if(e.key === "ArrowDown") {
-                if(guesses[turn][focused] < 6) {
-                    const temp = [...guesses];
-                    temp[turn][focused]++;
-                    setGuesses(temp);
-                } else {
-                    const temp = [...guesses];
-                    temp[turn][focused] = 1;
-                    setGuesses(temp);
-                }
-            }
-            if(e.key === "ArrowUp") {
-                if(guesses[turn][focused] > 1) {
-                    const temp = [...guesses];
-                    temp[turn][focused]--;
-                    setGuesses(temp);
-                } else {
-                    const temp = [...guesses];
-                    temp[turn][focused] = 6;
-                    setGuesses(temp);
-                }
-            }
-            if(e.key === "Enter") {
-                if(!guesses[turn].includes(0)){
-                    let correct = 0;
-                    let elligble = [0, 1, 2, 3];
-                    for(let i = 0; i < 4; i++){
-                        if(guesses[turn][i] === secret[i]) {
-                            correct++;
-                            let index = elligble.findIndex(a => a === i);
-                            elligble.splice(index, 1);
+            else if (gameWon.current === "") {
+                switch (e.key) {
+                    case 'ArrowRight':
+                        focused < 3 && setFocused(() => focused + 1);
+                        break;
+                    case 'ArrowLeft':
+                        focused > 0 && setFocused(() => focused - 1);
+                        break;
+                    case 'ArrowDown':
+                        if (guesses[turn][focused] < 6) {
+                            const temp = [...guesses];
+                            temp[turn][focused]++;
+                            setGuesses(temp);
+                        } else {
+                            const temp = [...guesses];
+                            temp[turn][focused] = 1;
+                            setGuesses(temp);
                         }
-                    }
-                    const temp = [...feedback];
-                    for(let t = 0; t < correct ; t++){
-                        temp[turn][t] = "black";
-                    }
-                    if(elligble.length > 1){
-                        let duplicate = [...elligble];
-                        for(let p = 0; p < elligble.length; p++){
-                            let h = duplicate.findIndex(m => guesses[turn][m] === secret[elligble[p]]);
-                            if(h !== -1) {
-                                temp[turn][correct] = "white";
-                                correct++;
-                                duplicate.splice(h, 1);
+                        break;
+                    case 'ArrowUp':
+                        if (guesses[turn][focused] > 1) {
+                            const temp = [...guesses];
+                            temp[turn][focused]--;
+                            setGuesses(temp);
+                        } else {
+                            const temp = [...guesses];
+                            temp[turn][focused] = 6;
+                            setGuesses(temp);
+                        }
+                        break;
+                    case 'Enter':
+                        if (!guesses[turn].includes(0)) {
+                            let correct = 0;
+                            let eligble = [0, 1, 2, 3];
+                            for (let i = 0; i < 4; i++) {
+                                if (guesses[turn][i] === secret[i]) {
+                                    correct++;
+                                    let index = eligble.findIndex(a => a === i);
+                                    eligble.splice(index, 1);
+                                }
                             }
+                            if (correct === 4) {
+                                gameWon.current = `Game won in ${turn + 1} turns`;
+                            }
+                            const temp = [...feedback];
+                            for (let t = 0; t < correct; t++) {
+                                temp[turn][t] = "black";
+                            }
+                            if (eligble.length > 1) {
+                                let duplicate = [...eligble];
+                                for (let p = 0; p < eligble.length; p++) {
+                                    let h = duplicate.findIndex(m => guesses[turn][m] === secret[eligble[p]]);
+                                    if (h !== -1) {
+                                        temp[turn][correct] = "white";
+                                        correct++;
+                                        duplicate.splice(h, 1);
+                                    }
+                                }
+                            }
+                            setFeedback(temp);
+                            setTurn(() => turn + 1);
+                            setFocused(() => 0);
+                        } else {
+                            setFocused(() => guesses[turn].findIndex(a => a === 0));
                         }
-                    }
-                    setFeedback(temp);
-                    setTurn(() => turn + 1);
-                    setFocused(() => 0);
-                } else {
-                    setFocused(() => guesses[turn].findIndex(a => a === 0));
+                        break;
+                    default:
+                        break;
                 }
             }
         }
@@ -166,7 +191,10 @@ export const Game1 = () => {
                     <h3><span>&larr;</span> and <span>&rarr;</span> change focus</h3>
                     <h3><span>&uarr;</span> and <span>&darr;</span> change color</h3>
                     <h3><span>&crarr;</span> submit completed trial</h3>
+                    <h3><span>n</span> starts a new game</h3>
                     <h3><br/>Feedback of blacks and whites indicate the total number of correct colors in the proposed trial. Blacks indicate correct place, white incorrect. The position of feedback signs has no significance.</h3>
+                    <br/>
+                    <h3><span>{gameWon.current !== "" && gameWon.current}</span></h3>
                 </Info>
             </ContentArea>
         </PermamentFeatures>
