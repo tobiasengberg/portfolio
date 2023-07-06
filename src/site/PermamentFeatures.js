@@ -9,7 +9,7 @@ export const PermamentFeatures = ({children, setId, overview, sideContent}) => {
                     <p className="uppercase">By Tobias Engberg</p>
                 </div>
                 <div>
-                    {overview ? undefined : <NavLink to={"/"} className="link right">&larr; Back to overview</NavLink>}
+                    {overview ? undefined : <NavLink to={"#/portfolio/"} className="link right">&larr; Back to overview</NavLink>}
                 </div>
                 <div>
                     {sideContent}

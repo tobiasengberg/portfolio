@@ -31,7 +31,7 @@ export const Card = ({index, links}) => {
     return (
         <ContentCard>
             <a key={index} href={links[0]}>
-            <img src={`/portfolio/img/${links[1]}`} alt={links[2]}/>
+            <img src={`#/portfolio/img/${links[1]}`} alt={links[2]}/>
             <section>
                 <h3><span>Subject:</span> {links[3][0]}</h3>
                 <p>{links[3][1]}</p>

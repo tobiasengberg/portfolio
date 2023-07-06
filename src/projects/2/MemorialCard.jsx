@@ -7,7 +7,7 @@ export const MemorialCard = ({ card, index, choose }) => {
     <div className={classification}>
       <img
         className={card.reveal ? 'chosen' : ''}
-        src={`/img/${card.image}.png`}
+        src={`#/portfolio/img/${card.image}.png`}
         alt='food'
         onClick={() => choose(index)}
       />
