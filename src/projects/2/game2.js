@@ -11,13 +11,40 @@ const ContentArea = styled.div`
     `;
 
 const Game = styled.div`
-      display: grid;
-      grid-template-columns: repeat(8, 100px);
-      margin: 50px;
-      .game-response {
-        grid-column: 2 / 7;
-      }
-    `;
+  display: grid;
+  grid-template-columns: repeat(8, 100px);
+  margin: 50px;
+
+  .game-response {
+    grid-column: 2 / 7;
+
+    button {
+      padding: 7px;
+      font-size: 1.3rem;
+      border-radius: 4px;
+      border: 3px solid white;
+      background-color: darksalmon;
+      color: white;
+      font-weight: 700;
+      margin-top: 2rem;
+    }
+
+    button:hover {
+      background-color: #d9866a;
+    }
+  }
+`;
+
+const Info = styled.div`
+  padding: 20px;
+  color: #777;
+
+  h3 {
+    font-size: 30px;
+    color: white;
+    text-shadow: 1px 1px #6d6d7e;
+  }
+`;
 
 export const Game2 = () => {
     const [amount, setAmount] = useState(20);
@@ -111,10 +138,20 @@ export const Game2 = () => {
         )
     }
 
-    const restart = () => {};
+    const restart = () => {
+        setCardMix(newGame);
+        setGuesses(0);
+        setFirstGuess(-1);
+        setSecondGuess(-1);
+        setSolved(0);
+        setTurns(0);
+    };
     return (
         <PermamentFeatures overview={false} sideContent={sideContent()}>
             <ContentArea>
+                <Info>
+                    <h3>Memory challenge. Try to match image pairs by mouse clicking squares.</h3>
+                </Info>
                 <Game>
                     {solved !== amount ? (
                         cardMix.map((card, index) => (
